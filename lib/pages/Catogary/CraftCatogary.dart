@@ -31,7 +31,9 @@ class CraftCatogary extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  height: Dimentions.height30*6,
+                  color: AppColors.mainColor,
+                  padding: EdgeInsets.only(top: Dimentions.height30,left: Dimentions.height20,right: Dimentions.height20),
+                  height: Dimentions.height20*6,
                   child: Positioned(
                       top: Dimentions.width30*3,
                       left: Dimentions.width20,
@@ -45,9 +47,18 @@ class CraftCatogary extends StatelessWidget {
                             },
                             child: AppIcon(
                               icon: Icons.arrow_back_ios_new,
-                              iconcolor:Colors.white,
-                              bgcolor: AppColors.mainColor,
+                              iconcolor:AppColors.navipink,
+                              bgcolor: Colors.white,
                               iconSize: Dimentions.iconSize24,
+                            ),
+                          ),
+                          SizedBox(width:Dimentions.width20*5,),
+
+                          Container(
+                            padding: EdgeInsets.only(bottom: Dimentions.height10,top: Dimentions.height10),
+                            child: largeText(
+                                overflow: TextOverflow.fade,
+                                text: "Craft Items"
                             ),
                           ),
                           SizedBox(width:Dimentions.width20*5,),
@@ -58,8 +69,8 @@ class CraftCatogary extends StatelessWidget {
                             },
                             child: AppIcon(
                               icon: Icons.home_outlined,
-                              iconcolor:Colors.white,
-                              bgcolor: AppColors.mainColor,
+                              iconcolor:AppColors.navipink,
+                              bgcolor: Colors.white,
                               iconSize: Dimentions.iconSize24,
                             ),
                           ),
@@ -75,9 +86,7 @@ class CraftCatogary extends StatelessWidget {
                     
                   ),
                 ),
-                largeText(
-                  overflow: TextOverflow.fade,
-                    text: "Find the best selling handicraft items. All  Crafts are the combination of the traditional & modern items of beauty with utility.")
+
               ],
             ),
           //details-------------------------------------------------------------

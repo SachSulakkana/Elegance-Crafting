@@ -14,6 +14,7 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         backgroundColor: AppColors.mainColor,
         title: largeText(
           text:"Profile",
@@ -26,13 +27,14 @@ class AccountPage extends StatelessWidget {
         child: Column(
           children: [
             AppIcon(
-                icon:Icons.person,
+              icon:Icons.person,
               bgcolor: AppColors.mainColor,
               size: Dimentions.height15*10,
               iconcolor: AppColors.peowhite,
               iconSize: Dimentions.height15*5,
             ),
             SizedBox(height: Dimentions.height30,),
+
             Expanded(child:
              SingleChildScrollView(
               child: Column(
@@ -99,13 +101,13 @@ class AccountPage extends StatelessWidget {
                   SizedBox(height: Dimentions.height30,),
                   AccountWidget(
                     appIcon: AppIcon(
-                      icon:Icons.devices_other,
+                      icon:Icons.logout,
                       bgcolor: Colors.redAccent,
                       size: Dimentions.height10*5,
                       iconcolor: AppColors.peowhite,
                       iconSize: Dimentions.height5*5,
                     ),
-                    largetext:largeText(text: "Any thing",),
+                    largetext:largeText(text: "Log Out",),
                   ),
                   SizedBox(height: Dimentions.height30,),
                   //Message

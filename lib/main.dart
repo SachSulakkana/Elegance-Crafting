@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         title: 'Flutter Demo',
 
-          initialRoute: RouteHelper.getSplashScreen(),
-          getPages: RouteHelper.routes,
-            //home: CraftCatogary(),
+         initialRoute: RouteHelper.getSplashScreen(),
+         getPages: RouteHelper.routes,
+            //home: SignInPage(),
 
          );
         }

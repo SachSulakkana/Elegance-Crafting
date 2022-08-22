@@ -15,7 +15,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class CartHistory extends StatelessWidget {
-  final  String dreamimage="assets/image/Dream Catchers/8-1.jpeg";
+
   const CartHistory({Key? key}) : super(key: key);
 
   @override
@@ -69,6 +69,7 @@ class CartHistory extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                Container(),
                 largeText(text: "Purchase Items History",color: Colors.white,),
 //------------------------------------------------------------Add More----------
                 GestureDetector(
@@ -89,7 +90,8 @@ class CartHistory extends StatelessWidget {
 //----------------------------Body Bar------------------------------------------
           GetBuilder<CartController>(builder: (_cartController){
           return _cartController.getCartHistoryList().length>0?
-          Expanded(child: Container(
+          Expanded(
+              child: Container(
               margin: EdgeInsets.only(
                 top: Dimentions.height10*2,
                 left: Dimentions.width20,
@@ -127,12 +129,10 @@ class CartHistory extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(Dimentions.radius15/2),
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
-                                        // image: NetworkImage(
-                                        //   AppConstants.BASE_URL+AppConstants.UPLOAD_URL+getCartHistoryList[listCounter-1].img!,
-                                        // ),
-                                        image: AssetImage(
-                                          dreamimage,
-                                        )
+                                        image: NetworkImage(
+                                          AppConstants.BASE_URL+AppConstants.UPLOAD_URL+getCartHistoryList[listCounter-1].img!,
+                                        ),
+
                                       ),
                                     ),
                                   ):Container();

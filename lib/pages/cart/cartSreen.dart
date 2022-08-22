@@ -16,8 +16,6 @@ import '../../routes/route_helper.dart';
 
 class  CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
-  final  String dreamimage="assets/image/Dream Catchers/8-1.jpeg";
-  final int dreamprice = 1250;
   @override
   Widget build(BuildContext context) {
 
@@ -119,11 +117,7 @@ class  CartScreen extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             fit: BoxFit.cover ,
-                                            image: AssetImage(
-                                              dreamimage,
-                                            ),
-                                            
-                                            // image: NetworkImage(AppConstants.BASE_URL+AppConstants.UPLOAD_URL+cartController.getItems[index].img!),
+                                            image: NetworkImage(AppConstants.BASE_URL+AppConstants.UPLOAD_URL+cartController.getItems[index].img!),
                                             //
                                           ),
                                           borderRadius: BorderRadius.circular(Dimentions.radius20),
@@ -139,16 +133,13 @@ class  CartScreen extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                             children: [
-                                             // largeText(text:cartController.getItems[index].name!,color: Colors.black54,),
-                                              //largeText(text: "White Colour Dream Catcher",color: Colors.black54,),
-                                              largeText(text: "Peo White Dream Catcher Large"),
-                                              smallText(text: "Dream Catcher"),
+                                             largeText(text:cartController.getItems[index].name!,color: Colors.black54,),
+                                              largeText(text: "White Colour Dream Catcher",color: Colors.black54,),
 
                                               Row(
                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                 children: [
-                                                  //largeText(text:"Rs. "+ cartController.getItems[index].price.toString()+".00",color: Colors.redAccent,),
-                                                  largeText(text:"Rs. "+ dreamprice.toString() +".00",color: Colors.redAccent,),
+                                                  largeText(text:"Rs. "+ cartController.getItems[index].price.toString()+".00",color: Colors.redAccent,),
                                                   // largeText(text:"Rs.2450.00",color: Colors.redAccent,),
 
                                                   Container(

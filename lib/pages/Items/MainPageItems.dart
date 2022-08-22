@@ -25,7 +25,6 @@ class MostViewedDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final int GreetingPrice = 1350;
     var product= Get.find<PopularProductController>().popularProductLists[pageId];
-    var GreetingImage ="assets/image/Greeting Cards/6-2.jpeg";
 
     Get.find<PopularProductController>().initCraft(product,Get.find<CartController>());
     return Scaffold(
@@ -43,10 +42,9 @@ class MostViewedDetails extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  // image: NetworkImage(
-                  //   AppConstants.BASE_URL+AppConstants.UPLOAD_URL+product.img!
-                  // ),
-                  image: AssetImage(GreetingImage),
+                  image: NetworkImage(
+                    AppConstants.BASE_URL+AppConstants.UPLOAD_URL+product.img!
+                  ),
                 ),
               ),
             ),
@@ -121,8 +119,7 @@ class MostViewedDetails extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppColumn(
-                        //text:product.name!,
-                      text: "Greeting Cards",
+                        text:product.name!,
                     ),
                     SizedBox(height: Dimentions.height20,),
                     largeText(text: "Description",),
@@ -131,19 +128,14 @@ class MostViewedDetails extends StatelessWidget {
                      Expanded(
                          child: SingleChildScrollView(
                              child: ExpandableText(
-                                 //text:product.description!,
-                               text: "100% brand new and high quality. Wish your special person with this cute greeting card, and bring a smile on face. Write your wishes in side of the card. Same as shown in Pictures",
+                                 text:product.description!,
                              )
                          )
                      ),
-
                   ],
                 ),
-
-
               )
           ),
-        
         ],
       ),
       bottomNavigationBar: GetBuilder<PopularProductController>(builder:(popularProduct){
@@ -171,8 +163,7 @@ class MostViewedDetails extends StatelessWidget {
                   ),
 
                   largeText(
-                    //text:"Q "+popularProduct.cartItems.toString()+" | "+ "Rs.${product.price! * popularProduct.cartItems}",
-                    text:"Q "+popularProduct.cartItems.toString()+" | "+ "Rs.${GreetingPrice * popularProduct.cartItems}",
+                    text:"Q "+popularProduct.cartItems.toString()+" | "+ "Rs.${product.price! * popularProduct.cartItems}",
 
                     color: AppColors.blackColor,
                     size: Dimentions.font26,

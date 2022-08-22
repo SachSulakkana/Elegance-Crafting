@@ -12,7 +12,7 @@ class CartController extends GetxController{
   Map<int, CartModel> _items={};
   Map<int, CartModel> get items=>_items;
   List<CartModel> storageItems=[];
-  final int DPrice = 1250;
+
   void addItems(ProductModel product,int quantity){
     var totalQuantity=0;
       if(_items.containsKey(product.id!)){
@@ -103,8 +103,8 @@ class CartController extends GetxController{
     var total = 0;
 
     _items.forEach((key, value) {
-     // total += value.quantity!*value.price!;
-      total += value.quantity!*DPrice;
+     total += value.quantity!*value.price!;
+
     });
 
     return total;

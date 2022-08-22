@@ -31,9 +31,7 @@ class _footPageState extends State<itemPage> {
   var _currentPageValue=0.0;
   double _scaleFactor =0.8;
   double _height=Dimentions.PageViewContainer;
-//--------------------------Delete----------------------------------------
-  int get index => 1;
-//-------------------------------------------------------------------
+
   @override
   void initState(){
 
@@ -54,7 +52,6 @@ class _footPageState extends State<itemPage> {
   }
 //-----------------------main floating images-----------------------------------
   @override
-  var GreetingImage ="assets/image/Greeting Cards/6-2.jpeg";
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -67,28 +64,7 @@ class _footPageState extends State<itemPage> {
                  controller: pageController,
                  itemCount:popularProducts.popularProductLists.length,
                  itemBuilder: (context, position){
-                   //return _buildPageItem(position,popularProducts.popularProductLists[position] );
-                 return
-                    GestureDetector(
-                      onTap: (){
-                        Get.toNamed(RouteHelper.getPopularCraft(index,"home"));
-                      },
-
-                      child: Container(
-                        margin: EdgeInsets.only(left: Dimentions.width10/2,right: Dimentions.width10/2),
-                       width: double.maxFinite,
-                       height:Dimentions.mostviweditems,
-                       decoration: BoxDecoration(
-                         image: DecorationImage(
-                           fit: BoxFit.cover,
-
-                           image: AssetImage(GreetingImage),
-                         ),
-                       ),
-
-                   ),
-                    );
-
+                   return _buildPageItem(position,popularProducts.popularProductLists[position] );
 
                  }
 
@@ -154,14 +130,9 @@ class _footPageState extends State<itemPage> {
                           color: Colors.white38,
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                              image: AssetImage(
-
-                                "assets/image/Dream Catchers/8-1.jpeg"
-                              ),
-
-                              // image: NetworkImage(
-                              //     AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductLists[index].img!
-                              // )
+                              image: NetworkImage(
+                                  AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductLists[index].img!
+                              )
 
                           ),
                         ),
@@ -186,12 +157,7 @@ class _footPageState extends State<itemPage> {
                               crossAxisAlignment:CrossAxisAlignment.start ,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                //largeText(text: recommendedProduct.recommendedProductLists[index].name!),
-                                largeText(text: "Dream Catchers "),
-                                SizedBox(height: Dimentions.height10,),
-                                smallText(text: "beautyfull big Blue and Black dream Catchers",),
-                                SizedBox(height: Dimentions.height10,),
-                                smallText(text: "Rs.1250.00",size: Dimentions.font20,)
+                                largeText(text: recommendedProduct.recommendedProductLists[index].name!),
 
 
                               ],

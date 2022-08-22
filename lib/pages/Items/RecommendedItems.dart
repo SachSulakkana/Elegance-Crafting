@@ -22,9 +22,7 @@ class RecommendedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-//-------------------------------------------------
-    final int priceCraft=1250;
-//----------------------------------------------
+
     var product = Get.find<RecommendedProductController>().recommendedProductLists[pageId];
     Get.find<PopularProductController>().initCraft(product,Get.find<CartController>());
     return Scaffold(
@@ -81,8 +79,8 @@ class RecommendedItem extends StatelessWidget {
                 child: Container(
                   child: Center(child: largeText(
                     size:Dimentions.font26,
-                    // text: product.name!,
-                    text: "Dream Catcher",
+                    text: product.name!,
+
                   )),
                   width: double.maxFinite,
                   padding: EdgeInsets.only(top: Dimentions.width10/2,bottom: Dimentions.width10),
@@ -101,8 +99,7 @@ class RecommendedItem extends StatelessWidget {
             expandedHeight: 400,
             flexibleSpace: FlexibleSpaceBar(
               background:
-                  //Image.network(AppConstants.BASE_URL+AppConstants.UPLOAD_URL+product.img!,
-              Image.asset("assets/image/Dream Catchers/8-1.jpeg",
+                  Image.network(AppConstants.BASE_URL+AppConstants.UPLOAD_URL+product.img!,
               width: double.maxFinite,
                 fit: BoxFit.cover,
               ),
@@ -112,25 +109,12 @@ class RecommendedItem extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  //child: ExpandableText(text:product.description!),
-                  child: ExpandableText(
-                    text:  "Nightmare will fade away with the sunrise with this dream catcher and it can give you a dreamy feeling. By hand, this dreamcatcher is purely woven with richly colored feathers and has the beauty of Art Deco, making the new element stunning to the eye. And it represents blessing, praying for peace and good luck. Made of feather and iron ring, it is durable and lightweight.The diameter of the mesh circle is 15cm, and the total length is 55cm.It can be used to decorate bedrooms, living rooms, lounges, offices, etc., and can also be used as a gift to family or friends and give them good wishes.",                                 ),
-                  margin: EdgeInsets.only(
-                    left: Dimentions.width20,
-                    right: Dimentions.width20,
-                    bottom: Dimentions.height10,
-                  ),
+                 child: ExpandableText(text:product.description!),
                 ),
-
               ],
-
-
             ),
-
           ),
-
         ],
-
       ),
 
       bottomNavigationBar: GetBuilder<PopularProductController>(builder: (controller){
@@ -143,7 +127,6 @@ class RecommendedItem extends StatelessWidget {
                 right: Dimentions.width20*2.5,
                 top: Dimentions.height10,
                 bottom: Dimentions.height10,
-
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,8 +142,7 @@ class RecommendedItem extends StatelessWidget {
                 icon: Icons.remove,
                 ),
                 ),
-                  //largeText(text:"Q  ${controller.cartItems} " + "| " + "Rs.${product.price!*controller.cartItems}",color: AppColors.blackColor,size: Dimentions.font26,),
-                  largeText(text:"Q  ${controller.cartItems} " + "| " + "Rs.${priceCraft*controller.cartItems}",color: AppColors.blackColor,size: Dimentions.font26,),
+                  largeText(text:"Q  ${controller.cartItems} " + "| " + "Rs.${product.price!*controller.cartItems}",color: AppColors.blackColor,size: Dimentions.font26,),
                   GestureDetector(
                     onTap: (){
                       controller.quantity(true);
@@ -172,7 +154,6 @@ class RecommendedItem extends StatelessWidget {
                       icon: Icons.add,
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -184,7 +165,6 @@ class RecommendedItem extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(Dimentions.radius20*2),
                     topRight: Radius.circular(Dimentions.radius20*2),
-
                   )
               ),
 
@@ -214,9 +194,7 @@ class RecommendedItem extends StatelessWidget {
                   ),
                 ],
               ),
-
             ),
-
           ],
         );
       },
